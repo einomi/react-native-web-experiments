@@ -1,0 +1,31 @@
+{
+  "parser": "babel-eslint",
+  "env": {
+    "browser": true,
+    "es6": true,
+    "commonjs": true,
+    "node": true
+  },
+  "extends": [
+    "plugin:sonarjs/recommended",
+    "@frontenso/javascript",
+    "@frontenso/react"
+  ],
+  "rules": {
+    "no-class-assign": "off",
+    "no-func-assign": "off",
+    "react/prop-types": "off",
+    "react/self-closing-comp": "error",
+    "max-len": "off"
+  },
+  "plugins": ["sonarjs"],
+  "globals": {
+    "mq": true,
+    "css": true
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
+}
