@@ -13,6 +13,19 @@ const config = {
       use: ['@svgr/webpack'],
     });
 
+    webpackConfig.resolve.alias = {
+      ...(webpackConfig.resolve.alias || {}),
+      // Transform all direct `react-native` imports to `react-native-web`
+      'react-native$': 'react-native-web',
+    };
+    webpackConfig.resolve.extensions = [
+      '.web.js',
+      '.web.jsx',
+      '.web.ts',
+      '.web.tsx',
+      ...webpackConfig.resolve.extensions,
+    ];
+
     return webpackConfig;
   },
 };
